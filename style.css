@@ -1,0 +1,73 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+#contents {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  max-width: 800px;
+  max-height: 100vh;
+  overflow: auto;
+  min-height: 60%;
+  width: 100%;
+}
+
+#exposition {
+  display: none;
+  width: 100%;
+  text-align: center;
+}
+
+#gameBoard {
+  display: grid;
+  grid-template-columns: repeat(3, 32%);
+  gap: 10px;
+  margin: 10px;
+}
+
+.bar {
+  display: flex;
+}
+
+.label {
+  color: #999999;
+  font-style: italic;
+}
+
+.spacer {
+  flex-grow: 1;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.card {
+  animation: fadeIn 250ms ease-in-out;
+  border: 2px outset;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 2 / 1;
+}
+
+.selected {
+  background-color: lightgray;
+}
+
+.shape {
+  height: 80%;
+  display: inline-block;
+  margin: 2px;
+  aspect-ratio: 1 / 2;
+}
