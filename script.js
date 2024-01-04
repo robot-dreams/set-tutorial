@@ -36,8 +36,12 @@ const steps = [
     'The goal is to find <b>sets</b> of <b>three cards</b> that satisfy a special requirement.'
   ],
   [
-    null,
-    'Each card has four properties...'
+    [
+      {number: 1, shape: 'squiggle', color: 'green', fill: 'striped'},
+      {number: 3, shape: 'diamond', color: 'purple', fill: 'solid'},
+      {number: 2, shape: 'oval', color: 'red', fill: 'blank'},
+    ],
+    'Each card has four properties: <b>number</b>, <b>shape</b>, <b>color</b>, and <b>fill</b>.'
   ],
   [
     [
@@ -45,7 +49,7 @@ const steps = [
       {number: 2, shape: 'oval', color: 'red', fill: 'solid'},
       {number: 1, shape: 'oval', color: 'red', fill: 'solid'},
     ],
-    '<b>number</b> (1, 2, or 3)...',
+    '<b>Number</b> can be 1, 2, or 3.',
   ],
   [
     [
@@ -53,7 +57,7 @@ const steps = [
       {number: 1, shape: 'oval', color: 'red', fill: 'solid'},
       {number: 1, shape: 'diamond', color: 'red', fill: 'solid'},
     ],
-    '<b>shape</b> (diamond, oval, or squiggle)...',
+    '<b>Shape</b> can be diamond, oval, or squiggle.',
   ],
   [
     [
@@ -61,7 +65,7 @@ const steps = [
       {number: 1, shape: 'oval', color: 'green', fill: 'solid'},
       {number: 1, shape: 'oval', color: 'red', fill: 'solid'},
     ],
-    '<b>color</b> (<span style="color: red">red</span>, <span style="color: green">green</span>, or <span style="color: purple">purple</span>)...',
+    '<b>Color</b> can be <span style="color: red">red</span>, <span style="color: green">green</span>, or <span style="color: purple">purple</span>.',
   ],
   [
     [
@@ -69,7 +73,7 @@ const steps = [
       {number: 1, shape: 'oval', color: 'red', fill: 'blank'},
       {number: 1, shape: 'oval', color: 'red', fill: 'solid'},
     ],
-    'and <b>fill</b> (solid, blank, or striped).',
+    'Finally, <b>fill</b> can be solid, blank, or striped.',
   ],
   [
     [
@@ -77,7 +81,7 @@ const steps = [
       {number: 2, shape: 'diamond', color: 'purple', fill: 'striped'},
       {number: 2, shape: 'oval', color: 'red', fill: 'striped'},
     ],
-    'A <b>set</b> consists of <b>three cards</b> where <b>every property</b> is either <b>all same</b> or <b>all different</b>. For example, this is a set:<p><b>Number</b>: all same<br><b>Shape</b>: all different<br><b>Color</b>: all different<br><b>Fill</b>: all same',
+    'A set consists of three cards where every property is either <b>all same</b> or <b>all different</b>. For example, this is a set:<p><b>Number</b>: all same<br><b>Shape</b>: all different<br><b>Color</b>: all different<br><b>Fill</b>: all same',
   ],
   [
     [
