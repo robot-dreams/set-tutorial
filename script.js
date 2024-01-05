@@ -138,14 +138,14 @@ const steps = [
   [
     [
       {number: 1, shape: 'oval', color: 'purple', fill: 'solid'},
-      {number: 2, shape: 'diamond', color: 'red', fill: 'blank'},
+      {number: 1, shape: 'diamond', color: 'red', fill: 'blank'},
       {number: 2, shape: 'diamond', color: 'purple', fill: 'solid'},
       {number: 1, shape: 'oval', color: 'red', fill: 'striped'},
       {number: 2, shape: 'squiggle', color: 'red', fill: 'blank'},
-      {number: 1, shape: 'diamond', color: 'green', fill: 'blank'},
+      {number: 1, shape: 'squiggle', color: 'green', fill: 'blank'},
       {number: 2, shape: 'diamond', color: 'purple', fill: 'blank'},
       {number: 3, shape: 'squiggle', color: 'purple', fill: 'striped'},
-      {number: 2, shape: 'diamond', color: 'green', fill: 'blank'},
+      {number: 3, shape: 'diamond', color: 'green', fill: 'blank'},
     ],
     'Can you find a set? Once you do, it\'s time to play for real!',
   ],
