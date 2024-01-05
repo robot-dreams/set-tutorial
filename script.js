@@ -257,15 +257,15 @@ function drawCurrentStep() {
 
   let [cards, expositionData] = steps[stepIndex];
 
-  board.innerHTML = '';
   board.style.display = 'none';
   if (cards !== null) {
-    board.style.display = 'grid';
     deck = cards.slice();
-    selected = [];
+    board.style.display = 'grid';
+    board.innerHTML = '';
     while (deck.length > 0) {
       board.appendChild(getNewCard());
     }
+    selected = [];
   }
 
   exposition.style.display = 'none';
