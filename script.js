@@ -17,7 +17,7 @@ const allFills = ['solid', 'blank', 'striped'];
 
 let deck = [];
 let selected = [];
-let stepIndex = -1;
+let stepIndex = 0;
 
 const steps = [
   [
@@ -223,27 +223,26 @@ function isSet(cards) {
 }
 
 function rewind() {
-  if (stepIndex > 0) {
-    progressIndicator.children[stepIndex - 1].classList.add('progressOff');
-    progressIndicator.children[stepIndex - 1].classList.remove('progressOn');
-  }
   stepIndex--;
-  renderStep();
+  drawCurrentStep();
+  let segment = progressIndicator.children[stepIndex];
+  segment.classList.add('progressOff');
+  segment.classList.remove('progressOn');
 }
 
 function nextStep() {
   if (stepIndex === steps.length - 1) {
     window.location.href = 'https://robot-dreams.github.io/set-game';
+  } else {
+    let segment = progressIndicator.children[stepIndex];
+    segment.classList.add('progressOn');
+    segment.classList.remove('progressOff');
+    stepIndex++;
+    drawCurrentStep();
   }
-  stepIndex++;
-  if (stepIndex > 0) {
-    progressIndicator.children[stepIndex - 1].classList.add('progressOn');
-    progressIndicator.children[stepIndex - 1].classList.remove('progressOff');
-  }
-  renderStep();
 }
 
-function renderStep() {
+function drawCurrentStep() {
   if (stepIndex == 0) {
     backButton.disabled = true;
   } else {
@@ -294,9 +293,10 @@ function handleKeyDown(e) {
 backButton.addEventListener('click', rewind);
 nextButton.addEventListener('click', nextStep);
 document.addEventListener('keydown', handleKeyDown);
+
 for (let i = 0; i < steps.length - 1; i++) {
   let segment = document.createElement('div');
   segment.classList.add('progressOff');
   progressIndicator.appendChild(segment);
 }
-nextStep();
+drawCurrentStep();
