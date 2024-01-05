@@ -161,7 +161,7 @@ function getNewCard() {
   card.setAttribute('color', color);
   card.setAttribute('fill', fill);
 
-  for (let n = 0; n < number; n++) {
+  for (let i = 0; i < number; i++) {
     let shapeElement = document.createElementNS(SVG_NS, 'svg');
     shapeElement.classList.add('shape');
     shapeElement.setAttribute('viewBox', '0 0 200 400');
