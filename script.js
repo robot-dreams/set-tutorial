@@ -34,7 +34,7 @@ const steps = [
       {number: 3, shape: 'diamond', color: 'green', fill: 'striped'},
       {number: 3, shape: 'oval', color: 'green', fill: 'blank'},
     ],
-    'The goal is to find <b>sets</b> of <b>three cards</b> that satisfy a special requirement.'
+    'The goal is to find <b>sets</b> of <b>three cards</b> that satisfy a special rule.'
   ],
   [
     [
@@ -74,7 +74,7 @@ const steps = [
       {number: 1, shape: 'oval', color: 'red', fill: 'blank'},
       {number: 1, shape: 'oval', color: 'red', fill: 'solid'},
     ],
-    'Finally, <b>fill</b> can be solid, blank, or striped.',
+    '<b>Fill</b> can be solid, blank, or striped.',
   ],
   [
     [
@@ -98,7 +98,7 @@ const steps = [
       {number: 3, shape: 'squiggle', color: 'purple', fill: 'solid'},
       {number: 1, shape: 'squiggle', color: 'red', fill: 'blank'},
     ],
-    'Actually, everything you\'ve seen so far has been a set :)<p>P.S. Try clicking the cards if you haven\'t already!',
+    'In fact, every example so far has been a set :)',
   ],
   [
     [
@@ -147,7 +147,7 @@ const steps = [
       {number: 3, shape: 'squiggle', color: 'purple', fill: 'striped'},
       {number: 3, shape: 'diamond', color: 'green', fill: 'blank'},
     ],
-    'Can you find a set? Once you do, it\'s time to play for real!',
+    'Can you find a set?<p>Doing so will complete the tutorial and move onto a real game!',
   ],
 ];
 
