@@ -99,7 +99,7 @@ const steps = [
       {number: 3, shape: 'squiggle', color: 'purple', fill: 'solid'},
       {number: 1, shape: 'squiggle', color: 'red', fill: 'blank'},
     ],
-    'Actually, everything you\'ve seen so far has been a set :)<p>Try clicking the cards if you haven\'t already!',
+    'Actually, everything you\'ve seen so far has been a set :)<p>P.S. Try clicking the cards if you haven\'t already!',
   ],
   [
     [
