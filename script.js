@@ -375,8 +375,8 @@ function renderStep() {
 
   exposition.style.display = 'none';
   if (expositionData !== null) {
-    exposition.style.display = 'flow';
-    exposition.innerHTML = expositionData;
+    exposition.style.display = 'flex';
+    expositionText.innerHTML = expositionData;
   }
 }
 
