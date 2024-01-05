@@ -364,6 +364,22 @@ function renderStep() {
   }
 }
 
+function handleKeyDown(e) {
+  switch (e.keyCode) {
+    case 37:
+      if (stepIndex > 0) {
+        rewind();
+      }
+      break;
+    case 39:
+      if (stepIndex < steps.length - 1) {
+        nextStep();
+      }
+      break;
+  }
+}
+
 backButton.addEventListener('click', rewind);
 nextButton.addEventListener('click', nextStep);
+document.addEventListener('keydown', handleKeyDown);
 nextStep();
