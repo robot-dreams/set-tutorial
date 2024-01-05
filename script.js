@@ -114,7 +114,7 @@ const steps = [
       {number: 1, shape: 'diamond', color: 'green', fill: 'solid'},
       {number: 3, shape: 'oval', color: 'green', fill: 'solid'},
     ],
-    'Here\'s an example that\'s <b>not a set</b>:<p><i>Number</i>: all different<br><i>Shape</i>: oval, diamond, diamond (<b>INVALID</b>)<br><i>Color</i>: all same<br><i>Fill</i>: all same',
+    'Here\'s an example that\'s <span id="notASet"><b>not a set</b></span>:<p><i>Number</i>: all different<br><i>Shape</i>: oval, diamond, diamond (<b>INVALID</b>)<br><i>Color</i>: all same<br><i>Fill</i>: all same',
   ],
   [
     [
@@ -122,7 +122,7 @@ const steps = [
       {number: 2, shape: 'diamond', color: 'red', fill: 'striped'},
       {number: 3, shape: 'diamond', color: 'purple', fill: 'striped'},
     ],
-    'Here\'s another example that\'s <b>not a set</b>:<p><i>Number</i>: 3, 2, 3 (<b>INVALID</b>)<br><i>Shape</i>: all same<br><i>Color</i>: all different<br><i>Fill</i>: striped, striped, solid (<b>INVALID</b>)',
+    'Here\'s another example that\'s <span id="notASet"><b>not a set</b></span>:<p><i>Number</i>: 3, 2, 3 (<b>INVALID</b>)<br><i>Shape</i>: all same<br><i>Color</i>: all different<br><i>Fill</i>: striped, striped, solid (<b>INVALID</b>)',
   ],
   [
     [
@@ -196,6 +196,14 @@ function getNewCard() {
   return card;
 }
 
+// Oddly specific function name...
+function removeNotASetUnderline() {
+  const notASet = document.getElementById('notASet');
+  if (notASet !== null) {
+    notASet.style.textDecoration = 'none';
+  }
+}
+
 function toggleSelected(card) {
   if (card.classList.contains('selected')) {
     card.classList.remove('selected');
@@ -209,6 +217,11 @@ function toggleSelected(card) {
       } else {
         card.classList.remove('selected');
         selected.pop();
+        const notASet = document.getElementById('notASet');
+        if (notASet !== null) {
+          notASet.style.textDecoration = 'underline';
+          setTimeout(removeNotASetUnderline, 500);
+        }
       }
     }
   }
