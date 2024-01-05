@@ -222,20 +222,6 @@ function isSet(cards) {
   });
 }
 
-function boardHasSet() {
-  let n = board.children.length;
-  for (let i = 0; i < n; i++) {
-    for (let j = i + 1; j < n; j++) {
-      for (let k = j + 1; k < n; k++) {
-        if (isSet([board.children[i], board.children[j], board.children[k]])) {
-          return true;
-        }
-      }
-    }
-  }
-  return false;
-}
-
 function rewind() {
   if (stepIndex > 0) {
     progressIndicator.children[stepIndex - 1].classList.add('progressOff');
