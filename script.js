@@ -26,7 +26,7 @@ const steps = [
       {number: 2, shape: 'squiggle', color: 'purple', fill: 'blank'},
       {number: 3, shape: 'oval', color: 'green', fill: 'striped'},
     ],
-    '<b><i>Set</i></b> is a game about <b>visual perception</b> and <b>pattern recognition</b>.'
+    '&#x201CSet&#x201D is a game about visual perception and pattern recognition.'
   ],
   [
     [
@@ -34,7 +34,7 @@ const steps = [
       {number: 3, shape: 'diamond', color: 'green', fill: 'striped'},
       {number: 3, shape: 'oval', color: 'green', fill: 'blank'},
     ],
-    'The goal is to find <b>sets</b> of <b>three cards</b> that satisfy a special rule.'
+    'The goal is to find sets of <b>three cards</b> that satisfy a special rule.'
   ],
   [
     [
