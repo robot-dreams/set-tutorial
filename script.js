@@ -82,7 +82,7 @@ const steps = [
       {number: 3, shape: 'diamond', color: 'green', fill: 'solid'},
       {number: 1, shape: 'oval', color: 'green', fill: 'blank'},
     ],
-    'A set consists of three cards where <i>every property is either <b>all same</b> or <b>all different</b></i>.',
+    'A set consists of three cards where <u>every property is either <b>all same</b> or <b>all different</b></u>.',
   ],
   [
     [
@@ -90,7 +90,7 @@ const steps = [
       {number: 2, shape: 'diamond', color: 'purple', fill: 'striped'},
       {number: 2, shape: 'oval', color: 'red', fill: 'striped'},
     ],
-    'For example, these three cards form a set.<p><i>Number</i>: all same<br><i>Shape</i>: all different<br><i>Color</i>: all different<br><i>Fill</i>: all same',
+    'For example, these three cards form a set:<p><i>Number</i>: all same<br><i>Shape</i>: all different<br><i>Color</i>: all different<br><i>Fill</i>: all same',
   ],
   [
     [
