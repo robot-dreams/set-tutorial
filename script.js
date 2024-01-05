@@ -3,6 +3,7 @@
 const SVG_NS = 'http://www.w3.org/2000/svg';
 
 const exposition = document.getElementById('exposition');
+const expositionText = document.getElementById('expositionText');
 const board = document.getElementById('gameBoard');
 const backButton = document.getElementById('backButton');
 const nextButton = document.getElementById('nextButton');
@@ -78,10 +79,26 @@ const steps = [
   [
     [
       {number: 2, shape: 'squiggle', color: 'green', fill: 'striped'},
+      {number: 3, shape: 'diamond', color: 'green', fill: 'solid'},
+      {number: 1, shape: 'oval', color: 'green', fill: 'blank'},
+    ],
+    'A set consists of three cards where <i>every property is either <b>all same</b> or <b>all different</b></i>.',
+  ],
+  [
+    [
+      {number: 2, shape: 'squiggle', color: 'green', fill: 'striped'},
       {number: 2, shape: 'diamond', color: 'purple', fill: 'striped'},
       {number: 2, shape: 'oval', color: 'red', fill: 'striped'},
     ],
-    'A set consists of three cards where every property is either <b>all same</b> or <b>all different</b>. For example, this is a set:<p><b>Number</b>: all same<br><b>Shape</b>: all different<br><b>Color</b>: all different<br><b>Fill</b>: all same',
+    'For example, these three cards form a set.<p><i>Number</i>: all same<br><i>Shape</i>: all different<br><i>Color</i>: all different<br><i>Fill</i>: all same',
+  ],
+  [
+    [
+      {number: 2, shape: 'squiggle', color: 'green', fill: 'striped'},
+      {number: 3, shape: 'squiggle', color: 'purple', fill: 'solid'},
+      {number: 1, shape: 'squiggle', color: 'red', fill: 'blank'},
+    ],
+    'Actually, everything you\'ve seen so far has been a set :)<p>Try clicking the cards if you haven\'t already!',
   ],
   [
     [
@@ -89,23 +106,23 @@ const steps = [
       {number: 1, shape: 'diamond', color: 'purple', fill: 'blank'},
       {number: 3, shape: 'oval', color: 'red', fill: 'blank'},
     ],
-    'Here\'s another example of a set:<p><b>Number</b>: all different<br><b>Shape</b>: all different<br><b>Color</b>: all different<br><b>Fill</b>: all same',
+    'Here\'s another example of a set:<p><i>Number</i>: all different<br><i>Shape</i>: all different<br><i>Color</i>: all different<br><i>Fill</i>: all same',
   ],
   [
     [
-      {number: 2, shape: 'diamond', color: 'green', fill: 'blank'},
-      {number: 1, shape: 'diamond', color: 'green', fill: 'blank'},
-      {number: 3, shape: 'oval', color: 'green', fill: 'blank'},
+      {number: 2, shape: 'diamond', color: 'green', fill: 'solid'},
+      {number: 1, shape: 'diamond', color: 'green', fill: 'solid'},
+      {number: 3, shape: 'oval', color: 'green', fill: 'solid'},
     ],
-    'Here\'s an example that\'s <b>not a set</b>:<p><b>Number</b>: all different<br><b>Shape</b>: INVALID (oval, diamond, diamond)!<br><b>Color</b>: all different<br><b>Fill</b>: all same',
+    'Here\'s an example that\'s <b>not a set</b>:<p><i>Number</i>: all different<br><i>Shape</i>: oval, diamond, diamond (<b>INVALID</b>)<br><i>Color</i>: all same<br><i>Fill</i>: all same',
   ],
   [
     [
-      {number: 2, shape: 'diamond', color: 'green', fill: 'striped'},
+      {number: 3, shape: 'diamond', color: 'green', fill: 'solid'},
       {number: 2, shape: 'diamond', color: 'red', fill: 'striped'},
       {number: 3, shape: 'diamond', color: 'purple', fill: 'striped'},
     ],
-    'Here\'s another example that\'s <b>not a set</b>:<p><b>Number</b>: INVALID (3, 2, 2)!<br><b>Shape</b>: all same<br><b>Color</b>: all different<br><b>Fill</b>: all same',
+    'Here\'s another example that\'s <b>not a set</b>:<p><i>Number</i>: 3, 2, 3 (<b>INVALID</b>)<br><i>Shape</i>: all same<br><i>Color</i>: all different<br><i>Fill</i>: striped, striped, solid (<b>INVALID</b>)',
   ],
   [
     [
@@ -130,11 +147,7 @@ const steps = [
       {number: 3, shape: 'squiggle', color: 'purple', fill: 'striped'},
       {number: 2, shape: 'diamond', color: 'green', fill: 'blank'},
     ],
-    'Can you find a set?',
-  ],
-  [
-    null,
-    '<a href="https://robot-dreams.github.io/set-game">Ready to play for real?</a>'
+    'Can you find a set? After this, it\'s time to play for real!',
   ],
 ];
 
@@ -327,6 +340,9 @@ function rewind() {
 }
 
 function nextStep() {
+  if (stepIndex === steps.length - 1) {
+    window.location.href = 'https://robot-dreams.github.io/set-game';
+  }
   stepIndex++;
   renderStep();
 }
