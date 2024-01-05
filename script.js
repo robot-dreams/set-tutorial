@@ -2,6 +2,7 @@
 
 const SVG_NS = 'http://www.w3.org/2000/svg';
 
+const progressIndicator = document.getElementById('progressIndicator');
 const exposition = document.getElementById('exposition');
 const expositionText = document.getElementById('expositionText');
 const board = document.getElementById('gameBoard');
@@ -335,6 +336,10 @@ function boardHasSet() {
 let stepIndex = -1;
 
 function rewind() {
+  if (stepIndex > 0) {
+    progressIndicator.children[stepIndex - 1].classList.add('progressOff');
+    progressIndicator.children[stepIndex - 1].classList.remove('progressOn');
+  }
   stepIndex--;
   renderStep();
 }
@@ -344,6 +349,10 @@ function nextStep() {
     window.location.href = 'https://robot-dreams.github.io/set-game';
   }
   stepIndex++;
+  if (stepIndex > 0) {
+    progressIndicator.children[stepIndex - 1].classList.add('progressOn');
+    progressIndicator.children[stepIndex - 1].classList.remove('progressOff');
+  }
   renderStep();
 }
 
@@ -398,4 +407,9 @@ function handleKeyDown(e) {
 backButton.addEventListener('click', rewind);
 nextButton.addEventListener('click', nextStep);
 document.addEventListener('keydown', handleKeyDown);
+for (let i = 0; i < steps.length - 1; i++) {
+  let segment = document.createElement('div');
+  segment.classList.add('progressOff');
+  progressIndicator.appendChild(segment);
+}
 nextStep();

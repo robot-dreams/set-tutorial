@@ -37,6 +37,22 @@ body {
   margin: 10px;
 }
 
+#progressIndicator {
+  height: 3px;
+  display: flex;
+  margin-bottom: 3px;
+}
+
+.progressOff {
+  background-color: none;
+  flex-grow: 1;
+}
+
+.progressOn {
+  background-color: gray;
+  flex-grow: 1;
+}
+
 .bar {
   display: flex;
 }
