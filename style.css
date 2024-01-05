@@ -40,7 +40,7 @@ body {
 #progressIndicator {
   height: 3px;
   display: flex;
-  margin-bottom: 3px;
+  margin-top: 3px;
 }
 
 .progressOff {
