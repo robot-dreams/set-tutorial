@@ -30,9 +30,9 @@ const steps = [
   ],
   [
     [
-      {number: 3, shape: 'squiggle', color: 'green', fill: 'solid'},
-      {number: 3, shape: 'diamond', color: 'green', fill: 'striped'},
-      {number: 3, shape: 'oval', color: 'green', fill: 'blank'},
+      {number: 2, shape: 'squiggle', color: 'green', fill: 'solid'},
+      {number: 2, shape: 'diamond', color: 'green', fill: 'striped'},
+      {number: 2, shape: 'oval', color: 'green', fill: 'blank'},
     ],
     'The goal is to find sets of <b>three cards</b> that satisfy a special rule.'
   ],
