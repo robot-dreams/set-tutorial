@@ -17,8 +17,7 @@ const allFills = ['solid', 'blank', 'striped'];
 
 let deck = [];
 let selected = [];
-let targetCards = 9;
-
+let stepIndex = -1;
 
 const steps = [
   [
@@ -255,12 +254,6 @@ function toggleSelected(card) {
   }
 }
 
-function dealThree() {
-  for (let i = 0; i < 3; i++) {
-    board.appendChild(getNewCard());
-  }
-}
-
 function isSet(cards) {
   for (let property of allProperties) {
     let values = cards.map(card => card.getAttribute(property));
@@ -285,8 +278,6 @@ function boardHasSet() {
   }
   return false;
 }
-
-let stepIndex = -1;
 
 function rewind() {
   if (stepIndex > 0) {
@@ -330,8 +321,8 @@ function renderStep() {
     board.style.display = 'grid';
     deck = cards.slice();
     selected = [];
-    while (board.children.length < targetCards && deck.length > 0) {
-      dealThree();
+    while (deck.length > 0) {
+      board.appendChild(getNewCard());
     }
   }
 
