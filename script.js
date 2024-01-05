@@ -151,46 +151,6 @@ const steps = [
   ],
 ];
 
-// Includes both endpoints.
-function randint(a, b) {
-  return a + Math.floor(Math.random() * (b - a + 1));
-}
-
-function randchoice(items) {
-  return items[randint(0, items.length - 1)];
-}
-
-function handleMode(mode, allItems, single) {
-  if (mode === single) {
-    return [randchoice(allItems)];
-  } else {
-    return allItems;
-  }
-}
-
-function getShuffledDeck(mode) {
-  let result = []
-  let numbers = handleMode(mode, allNumbers, 'singlenumber');
-  let shapes = handleMode(mode, allShapes, 'singleshape');
-  let colors = handleMode(mode, allColors, 'singlecolor');
-  let fills = handleMode(mode, allFills, 'singlefill');
-  for (let number of numbers) {
-    for (let shape of shapes) {
-      for (let color of colors) {
-        for (let fill of fills) {
-          result.push({number, shape, color, fill});
-        }
-      }
-    }
-  }
-  // Knuth shuffle
-  for (let i = result.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [result[i], result[j]] = [result[j], result[i]];
-  }
-  return result;
-}
-
 function getNewCard() {
   let {number, shape, color, fill} = deck.pop();
 
