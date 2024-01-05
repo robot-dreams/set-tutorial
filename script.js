@@ -247,58 +247,11 @@ function toggleSelected(card) {
     if (selected.length === 3) {
       if (isSet(selected)) {
         nextStep();
-        /*
-        replaceSelected();
-        ensureSet();
-        */
       } else {
         card.classList.remove('selected');
         selected.pop();
       }
     }
-  }
-}
-
-function replaceSelected() {
-  let children = Array.from(board.children);
-  let replacements = [];
-  if (deck.length > 0 && children.length <= targetCards) {
-    for (let i = 0; i < 3; i++) {
-      replacements.push(getNewCard());
-    }
-  } else {
-    let numToMove = 0;
-    for (let i = 0; i < children.length - selected.length; i++) {
-      let card = children[i];
-      if (card.classList.contains('selected')) {
-        numToMove++;
-      }
-    }
-    for (let i = children.length - 1; i >= 0; i--) {
-      let card = children[i];
-      if (!card.classList.contains('selected')) {
-        if (replacements.length < numToMove) {
-          replacements.push(card);
-        }
-      }
-    }
-  }
-  for (let i = 0; i < children.length; i++) {
-    let card = children[i];
-    if (card.classList.contains('selected')) {
-      if (replacements.length > 0) {
-        board.replaceChild(replacements.pop(), card);
-      } else {
-        card.remove();
-      }
-    }
-  }
-  selected = [];
-}
-
-function ensureSet() {
-  while (deck.length > 0 && !boardHasSet()) {
-    dealThree();
   }
 }
 
