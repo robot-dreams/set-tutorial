@@ -147,7 +147,7 @@ const steps = [
       {number: 3, shape: 'squiggle', color: 'purple', fill: 'striped'},
       {number: 2, shape: 'diamond', color: 'green', fill: 'blank'},
     ],
-    'Can you find a set? After this, it\'s time to play for real!',
+    'Can you find a set? Once you do, it\'s time to play for real!',
   ],
 ];
 
